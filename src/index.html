@@ -9,6 +9,77 @@
   </head>
 
   <body>
-      <h1>ECRA Data for Google Maps API</h1>
+    <div class="container-fluid">
+      <!--HOME SECTION "this is a splash page for the web app"-->
+      <section id="homeSection" class="jumbotron">
+        <h1 class="display-5"><%= htmlWebpackPlugin.options.title %></h1>
+        <p class="lead">
+          Use your CSV data, plot the locations on the map, plan a
+          route, and generate a report.
+        </p>
+        <hr class="my-4" />
+        <p>When you're ready, click the button below to continue.</p>
+        <button id="getStartedButton" class="btn btn-primary">
+          Get Started
+        </button>
+      </section>
+
+
+      <!--IMPORT DATA SECTION "will allow user to pick a csv file on the computer and be read into the browsers web storage"-->
+      <section id="importSection" class="jumbotron">
+        <h1 class="display-5">Import Data</h1>
+        <div class="row">
+          <div class="col">
+            <p class="lead">Select a CSV file to parse and use with a map.</p>
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input
+                  id="csvFileInput"
+                  type="file"
+                  class="custom-file-input"
+                  accept=".csv"
+                  required
+                />
+                <label
+                  id="csvFileLabel"
+                  class="custom-file-label"
+                  for="csvFileInput"
+                  >Choose CSV file...</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <p class="lead">Or select a JSON file to open a saved map.</p>
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input
+                  id="jsonFileInput"
+                  type="file"
+                  class="custom-file-input"
+                  accept="application/json"
+                  required
+                />
+                <label
+                  id="jsonFileLabel"
+                  class="custom-file-label"
+                  for="jsonFileInput"
+                  >Choose JSON file...</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <p>When you're ready, click the button below to import your data.</p>
+        <button id="importButton" class="btn btn-primary">Import</button>
+      </section>
+
+      <!-- SELECT FIELDS SECTION "allows user to pick what fields should be used for geocoding our csv data" -->
+
+      <!--PLAN ROUTE SECTION "feature our map and be a interface for viewing the data at each location/control if user wants to save the map data or export a pdf report with directions  -->
+
+    </div>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= htmlWebpackPlugin.options.apiKey %>&libraries=places"></script>
   </body>
