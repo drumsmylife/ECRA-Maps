@@ -26,7 +26,7 @@
 
 
       <!--IMPORT DATA SECTION "will allow user to pick a csv file on the computer and be read into the browsers web storage"-->
-      <section id="importSection" class="jumbotron">
+      <section id="importSection" class="jumbotron" style="display:none">
         <h1 class="display-5">Import Data</h1>
         <div class="row">
           <div class="col">
@@ -76,10 +76,9 @@
       </section>
 
       <!-- SELECT FIELDS SECTION "allows user to pick what fields should be used for geocoding our csv data" -->
-      <section id="fieldsSection" class="jumbotron">
+      <section id="fieldsSection" class="jumbotron" style="display:none">
         <h1 class="display-5">Select Fields</h1>
-        <p class="lead">
-          Choose required geocoding fields and also any data fields to include.</p>
+        <p class="lead">Choose required geocoding fields and also any data fields to include.</p>
        
           <form id="fieldsForm" novalidate>
           <!-- FIELDS -->
@@ -215,7 +214,53 @@
       </section>
 
 
-      <!--PLAN ROUTE SECTION "feature our map and be a interface for viewing the data at each location/control if user wants to save the map data or export a pdf report with directions  -->
+      <!--PLAN ROUTE SECTION "feature our map and be a interface for viewing the data at each location/control if user wants to save the map data or export a pdf report with directions  -->  
+      <section id="routeSection" class="jumbotron" style="display:none">
+        <div class="row">
+          <div class="col">
+            <h1 class="display-5">Plan Route</h1>
+            <p class="lead">
+              Select the locations in order to create your directions.</p>
+            <div id="map"></div>
+            <div class="row mt-4">
+              <div class="col">
+                <b>Selected Location</b>
+                <pre id="locationPre">No location to show.</pre>
+              </div>
+              <div class="col">
+                <b>Selected Data</b>
+                <pre id="dataPre">No data to show.</pre>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <table class="table table-sm">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Location</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Data</th>
+                </tr>
+              </thead>
+              <tbody id="locationTableBody">
+                <tr>
+                  <td colspan="3">No directions to show.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <p>
+          Click one of the buttons below to export a PDF report or export your
+          JSON data.
+        </p>
+        <button id="fieldsReturnButton" class="btn btn-danger">Back</button>
+        <button id="exportPdfButton" class="btn btn-primary">Export PDF</button>
+        <a id="exportJsonButton" class="btn btn-primary" href="#"
+          >Export JSON</a
+        >
+      </section>
 
     </div>
 
