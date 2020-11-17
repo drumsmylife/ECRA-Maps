@@ -76,6 +76,144 @@
       </section>
 
       <!-- SELECT FIELDS SECTION "allows user to pick what fields should be used for geocoding our csv data" -->
+      <section id="fieldsSection" class="jumbotron">
+        <h1 class="display-5">Select Fields</h1>
+        <p class="lead">
+          Choose required geocoding fields and also any data fields to include.</p>
+       
+          <form id="fieldsForm" novalidate>
+          <!-- FIELDS -->
+          <div class="form-group row">
+            <label for="schoolIdInput" class="col-form-label col-sm-4">School ID</label>
+            <div class="col-sm-6">
+              <select
+                id="schoolIdInput"
+                name="schoolId"
+                class="form-control"
+                required
+              ></select>
+              <div class="invalid-feedback">
+                Please choose a field for school ID.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="schoolNameInput" class="col-form-label col-sm-4">School Name</label>
+            <div class="col-sm-6">
+              <select
+                id="schoolNameInput"
+                name="schoolName"
+                class="form-control"
+                required
+              ></select>
+              <div class="invalid-feedback">
+                Please choose a field for school name.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="lowestGradeInput" class="col-form-label col-sm-4"
+              >Lowest Grade</label
+            >
+            <div class="col-sm-6">
+              <select
+                id="lowestGradeInput"
+                name="lowestGrade"
+                class="form-control"
+                required
+              ></select>
+              <div class="invalid-feedback">
+                Please choose a field for lowest grade
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="highestGradeInput" class="col-form-label col-sm-4"
+              >Highest grade</label
+            >
+            <div class="col-sm-6">
+              <select
+                id="highestGradeInput"
+                name="highestGrade"
+                class="form-control"
+                required
+              ></select>
+              <div class="invalid-feedback">
+                Please choose a field for highest grade.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="addressInput" class="col-form-label col-sm-4"
+              >Address</label
+            >
+            <div class="col-sm-6">
+              <select
+                id="addressInput"
+                name="address"
+                class="form-control"
+                required
+              ></select>
+              <div class="invalid-feedback">
+                Please choose a field for address.
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="cityInput" class="col-form-label col-sm-4"
+              >City</label
+            >
+            <div class="col-sm-6">
+              <select
+                id="cityInput"
+                name="city"
+                class="form-control"
+                required
+              ></select>
+              <div class="invalid-feedback">
+                Please choose a field for city.
+              </div>
+            </div>
+          </div>
+
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-4">
+                Data Fields <small><i>(Optional)</i></small>
+              </legend>
+              <div id="dataFieldsContainer" class="col-sm-6 mt-1"></div>
+            </div>
+          </fieldset>
+
+          <!-- BOTTOM PORTION -->
+          <hr class="my-4" />
+          <p>
+            When you're ready, click the button below to geocode
+            <span id="fileSummarySpan"></span> and load your map.
+          </p>
+
+          <!-- A progress bar which will be updated and moving across the screen which shows the user when that task is done -->
+          <div
+            id="progressBarContainer"
+            class="progress mb-4"
+            style="display: none;"
+          >
+            <div
+              id="progressBar"
+              class="progress-bar progress-bar-striped progress-bar-animated"
+              role="progressbar"
+              style="width: 0%;"
+            >
+              0%
+            </div>
+          </div>
+
+          <!--Buttons to go back to previous step and a plot button which will place those specific loactions on our map-->
+          <button id="importReturnButton" class="btn btn-danger">Back</button>
+          <button id="plotButton" class="btn btn-primary">Plot</button>
+        </form>
+      </section>
+
 
       <!--PLAN ROUTE SECTION "feature our map and be a interface for viewing the data at each location/control if user wants to save the map data or export a pdf report with directions  -->
 
