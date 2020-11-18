@@ -15,6 +15,11 @@ import {
 } from "./interactions/navigation";
 
 import {
+    populateGeocodingFields,
+    populateDataFields,
+  } from "./interactions/fields";
+
+import {
     handleCsvFileChange,
   } from "./interactions/import";
   
@@ -65,9 +70,49 @@ $(() => {
     const isJson = $("#jsonFileInput").val() ? true : false;
 
     if (isCsv) {
-
+        populateGeocodingFields();
+        populateDataFields();
+        goToFieldsSection();
     } else if (isJson) {
      
     }
   })
 });
+
+
+  /*
+   * Fields Section
+   */
+  $("#fieldsForm").submit((e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  $("#addressInput, #cityInput, #provinceInput, #postalCodeInput, #countryInput").change(function () {
+    setGeocodingField($(this).attr("name"), $(this).val());
+    populateDataFields();
+  });
+
+  $("#plotButton").click(() => {
+    if ($("#fieldsForm").get(0).checkValidity()) {
+      setFieldsDisabled(true);
+      store("progress", 0);
+
+      geocode((err, geocodedData) => {
+        if (err || !geocodedData) return;
+
+        store("data", geocodedData);
+        store("route", []);
+        createMap();
+        embedJsonData();
+        goToRouteSection();
+      });
+    } else {
+      $("#fieldsForm").addClass("was-validated");
+    }
+  });
+
+  $("#importReturnButton").click(() => {
+    resetImportFields();
+    returnToImportSection();
+  });
