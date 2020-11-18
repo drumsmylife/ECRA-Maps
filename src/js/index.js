@@ -17,13 +17,19 @@ import {
 import {
     populateGeocodingFields,
     populateDataFields,
+    setGeocodingField,
+    setFieldsDisabled,
   } from "./interactions/fields";
 
 import {
     handleCsvFileChange,
+    resetImportFields,
   } from "./interactions/import";
   
   import { store } from "./utils/storage";
+
+  import { geocode } from "./interactions/geocode";
+
 
 $(() => {
   /*
@@ -102,10 +108,7 @@ $(() => {
         if (err || !geocodedData) return;
 
         store("data", geocodedData);
-        store("route", []);
-        createMap();
-        embedJsonData();
-        goToRouteSection();
+        
       });
     } else {
       $("#fieldsForm").addClass("was-validated");
@@ -116,3 +119,5 @@ $(() => {
     resetImportFields();
     returnToImportSection();
   });
+
+

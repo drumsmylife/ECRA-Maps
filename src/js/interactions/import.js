@@ -23,5 +23,19 @@ export const handleCsvFileChange = (files, callback) => {
     fileReader.onerror = (err) => callback(err, null, null);
     fileReader.readAsText(file);
   };
+
+  export const resetImportFields = () => {
+      // its going to take a look at csv file label and reset text back to default text
+    $("#csvFileLabel").text("Choose CSV file...");
+    //make sure that it is not disabled
+    $("#csvFileInput").prop("disabled", false);
+    // reset the value of the file in case any file was left behind
+    $("#csvFileInput").val("");
+    //same steps for json
+    $("#jsonFileLabel").text("Choose JSON file...");
+    $("#jsonFileInput").prop("disabled", false);
+    $("#jsonFileInput").val("");
+  };
+  
   
   
