@@ -13,9 +13,9 @@ export const populateGeocodingFields = () => {
       geocoding: {
         address: fields[0],
         city: fields[0],
-        province: fields[0],
-        postalCode: fields[0],
-        country: fields[0],
+        state: fields[0],
+        zip: fields[0],
+       schoolName: fields[0],
       },
       data: []
     },
@@ -26,7 +26,7 @@ export const populateGeocodingFields = () => {
     let $option = $("<option />").attr("value", field).text(field);
 
     $(
-        "#addressInput, #cityInput, #provinceInput, #postalCodeInput, #countryInput"
+        "#addressInput, #cityInput, #schoolNameInput, #schoolZipInput, #schoolStateInput"
       ).append($option);
     });
   };

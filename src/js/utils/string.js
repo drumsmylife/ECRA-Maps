@@ -2,11 +2,11 @@
 export const addressAsString = ({
     address,
     city,
-    province,
-    postalCode,
-    country,
+    state,
+    zip,
+    schoolName,
   }) => {
-    return `${address}, ${city}, ${province} ${postalCode}, ${country}`;
+    return `${address}, ${city}, ${state} ${zip}, ${schoolName}`;
   };
   
   export const jsonAsText = (json) => {

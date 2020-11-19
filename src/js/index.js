@@ -94,7 +94,7 @@ $(() => {
     e.stopPropagation();
   });
 
-  $("#addressInput, #cityInput, #provinceInput, #postalCodeInput, #countryInput").change(function () {
+  $("#addressInput, #cityInput, #schoolNameInput, #schoolStateInput, #schoolZipInput").change(function () {
     setGeocodingField($(this).attr("name"), $(this).val());
     populateDataFields();
   });
@@ -108,7 +108,10 @@ $(() => {
         if (err || !geocodedData) return;
 
         store("data", geocodedData);
-        
+        store("route", []);
+        createMap();
+        embedJsonData();
+        goToRouteSection();
       });
     } else {
       $("#fieldsForm").addClass("was-validated");
