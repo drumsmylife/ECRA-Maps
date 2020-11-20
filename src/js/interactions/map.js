@@ -78,7 +78,7 @@ export const createMap = () => {
     return map;
 
 
-}
+};
 
 export const renderDirections = (directionsRenderer, map) => {
   const route = retrieve("route");

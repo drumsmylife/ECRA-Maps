@@ -1,3 +1,6 @@
+
+import $ from "jquery";
+
 import { parseCsv, parseJson } from "../utils/file";
 
 /*
@@ -23,6 +26,26 @@ export const handleCsvFileChange = (files, callback) => {
     fileReader.onerror = (err) => callback(err, null, null);
     fileReader.readAsText(file);
   };
+
+
+  export const handleJsonFileChange = (files, callback) => {
+    if (files.length < 1) 
+      return callback("Choose JSON file...", null, null);
+  
+    const file = files[0];
+  
+    //checks to see if file is usable. if not an error message is returned
+    if (file.type !== "application/json" && !file.name.includes(".json"))
+      return callback("Invalid file type, must be a JSON file.", null, null);
+  
+    let fileReader = new FileReader();
+    fileReader.onload = (e) =>
+      callback(null, file.name, parseJson(e.target.result));
+    fileReader.onerror = (err) => callback(err, null, null);
+    fileReader.readAsText(file);
+  };
+
+
 
   export const resetImportFields = () => {
       // its going to take a look at csv file label and reset text back to default text

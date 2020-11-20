@@ -53,8 +53,8 @@ const geocoderPromise = (geocoder, object, increment, seconds) => {
         let addressObject = {
           address: d[geocodingFields.address],
           city: d[geocodingFields.city],
-          state: d[geocodingFields.state],
-          zip: d[geocodingFields.zip],
+          schoolState: d[geocodingFields.schoolState],
+          schoolZip: d[geocodingFields.schoolZip],
           schoolName: d[geocodingFields.schoolName],
         };
         let addressString = addressAsString(addressObject);

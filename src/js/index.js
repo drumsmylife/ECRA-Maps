@@ -24,10 +24,13 @@ import {
 import {
     handleCsvFileChange,
     resetImportFields,
+    handleJsonFileChange,
   } from "./interactions/import";
 
   import {
-    createMap
+    createMap,
+    renderDirections,
+    handleDirectionsChanged
   } from "./interactions/map";
   
 
@@ -39,6 +42,8 @@ import {
 import { resetProgressBar } from "./interactions/progress";
 
 import { embedJsonData } from "./export/json";
+
+import { exportPdfReport } from "./export/pdf";
 
 
 $(() => {
@@ -73,10 +78,24 @@ $(() => {
       });
     });
 
-  $("#jsonFileInput").change((e) => {
 
+
+  $("#jsonFileInput").change((e) => {
+    handleJsonFileChange(e.target.files, (err, filename, contents) => {
+      if (err) return $("#jsonFileLabel").text(err);
+
+      store("data", contents.data);
+      store("route", contents.route);
+
+      $("#jsonFileLabel").text(`File: ${filename}`);
+      $("#csvFileLabel").text("Choose CSV file...");
+      $("#csvFileInput").val("");
+      $("#importButton").prop("disabled", false);
+    });
 
   });
+
+
 
   $("#importButton").click(() => {
     $("#csvFileInput").prop("disabled", true);
@@ -84,16 +103,20 @@ $(() => {
 
     const isCsv = $("#csvFileInput").val() ? true : false;
     const isJson = $("#jsonFileInput").val() ? true : false;
-
     if (isCsv) {
-        populateGeocodingFields();
-        populateDataFields();
-        goToFieldsSection();
+      populateGeocodingFields();
+      populateDataFields();
+      goToFieldsSection();
     } else if (isJson) {
-     
+      renderDirections(
+        new google.maps.DirectionsRenderer({ preserveViewport: true }),
+        createMap()
+      );
+      handleDirectionsChanged();
+      embedJsonData();
+      skipToRouteSection();
     }
-  })
-});
+  });
 
 
   /*
@@ -136,5 +159,15 @@ $(() => {
     returnToImportSection();
   });
 
+    /*
+   * Route Section
+   */
+  $("#exportPdfButton").click(exportPdfReport);
 
+  $("#fieldsReturnButton").click(() => {
+    setFieldsDisabled(false);
+    resetProgressBar();
+    returnToFieldsSection();
+  });
 
+});
