@@ -9,6 +9,7 @@ export const addressAsString = ({
     return `${address}, ${city}, ${state} ${zip}, ${schoolName}`;
   };
   
+  //this will accept json as an argument
   export const jsonAsText = (json) => {
     let text = JSON.stringify(json, null, 1);
     text = text.replace("\n", "");
