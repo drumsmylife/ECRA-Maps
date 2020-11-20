@@ -1,15 +1,15 @@
 import $ from "jquery";
+
 import { retrieve, store } from "../utils/storage";
 
 
 export const createMap = () => {
-    const data = retrieve("data");
-    let mapOptions = {
-      mapTypeControl: false,
-      rotateControl: false,
-      zoom: 11,
-    };
-
+  const data = retrieve("data");
+  let mapOptions = {
+    mapTypeControl: false,
+    rotateControl: false,
+    zoom: 11,
+  };
     //array to hold our markers
     let markers = [];
     // this bounds object represents the coordinates that are aligned with the rectangle that our map occupies
@@ -34,4 +34,4 @@ export const createMap = () => {
     return map;
 
 
-}
+};

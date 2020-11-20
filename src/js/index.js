@@ -25,10 +25,20 @@ import {
     handleCsvFileChange,
     resetImportFields,
   } from "./interactions/import";
+
+  import {
+    createMap
+  } from "./interactions/map";
+  
+
   
   import { store } from "./utils/storage";
 
   import { geocode } from "./interactions/geocode";
+
+import { resetProgressBar } from "./interactions/progress";
+
+import { embedJsonData } from "./export/json";
 
 
 $(() => {
@@ -105,6 +115,9 @@ $(() => {
       store("progress", 0);
 
       geocode((err, geocodedData) => {
+        console.log(geocodedData);
+        console.log(err);
+        console.log(err || !geocodedData);
         if (err || !geocodedData) return;
 
         store("data", geocodedData);
@@ -122,5 +135,6 @@ $(() => {
     resetImportFields();
     returnToImportSection();
   });
+
 
 
