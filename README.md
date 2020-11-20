@@ -25,10 +25,10 @@ Run npm install to install dependencies.
 # Tutorial Used/Credit 
 1. Bryce - Develop Mindfully
 2. youtube link 
-.part1 https://www.youtube.com/watch?v=NjBgfR0StLU&t=909s
-.part 2 https://www.youtube.com/watch?v=W_NaHQOcWoc&t=552s
-.part 3 https://www.youtube.com/watch?v=VtPFINFanL4
-.part 4 https://www.youtube.com/watch?v=0kcTD_HtTKE
-3. A very big help to learn how to do this project correctly and efficiently
+3. part1 https://www.youtube.com/watch?v=NjBgfR0StLU&t=909s
+4 .part 2 https://www.youtube.com/watch?v=W_NaHQOcWoc&t=552s
+5 .part 3 https://www.youtube.com/watch?v=VtPFINFanL4
+6 .part 4 https://www.youtube.com/watch?v=0kcTD_HtTKE
+7 . A very big help to learn how to do this project correctly and efficiently
 
 
