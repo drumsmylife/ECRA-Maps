@@ -23,7 +23,8 @@ Run npm install to install dependencies.
 . Jspdf-AutoTable
 
 # Tutorial Used/Credit 
-Bryce - Develop Mindfully
-A very big help to learn how to do this project correctly and efficiently
+1. Bryce - Develop Mindfully
+2. youtube link https://www.youtube.com/watch?v=NjBgfR0StLU&t=909s
+3. A very big help to learn how to do this project correctly and efficiently
 
 
