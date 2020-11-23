@@ -13,6 +13,16 @@ Run npm install to install dependencies.
 
 2.Run npm run dev to run the project using webpack-dev-server.
 
+3. Match all required fields with each other
+ - address to address
+ - city to city
+ - state to state
+ - zip to zip
+ 
+ 4. you can check the optional fields if you want but do not have to
+ 
+ 5. DO NOT USE A BIG CSV FILE WITH A TON OF ROWS/COLUMNS. IT WILL TAKE TOO LONG TO LOAD. CHOOSE A SMALLER CSV FILE WITH A SHORT AMOUNT OF INFO. THIS IS BECAUSE OF THE GOOGLE API USAGE LIMIT
+
 
 # Dev Tools and Libraries used
 . Webpack
