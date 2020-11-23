@@ -14,24 +14,26 @@ INFO
 
 3. Run npm run dev to run the project using webpack-dev-server.
 
-4. Match all required fields with each other
+4. Click get started and choose your CSV File or JSON file
+
+5. DO NOT USE A BIG CSV FILE WITH A TON OF ROWS/COLUMNS. IT WILL TAKE TOO LONG TO LOAD. CHOOSE A SMALLER CSV FILE WITH A SHORT AMOUNT OF INFO. THIS IS BECAUSE OF THE GOOGLE API USAGE LIMIT. If it is loading very slow then the file is too big. 
+ 
+6. Match all required fields with each other
  - address to address
  - city to city
  - state to state
  - zip to zip
  
-5. You can check the optional fields if you want but do not have to
+7. You can check the optional fields if you want but do not have to
  
-6. DO NOT USE A BIG CSV FILE WITH A TON OF ROWS/COLUMNS. IT WILL TAKE TOO LONG TO LOAD. CHOOSE A SMALLER CSV FILE WITH A SHORT AMOUNT OF INFO. THIS IS BECAUSE OF THE GOOGLE API USAGE LIMIT
-
 
 # Dev Tools and Libraries used
-. Webpack
-. Babel
-. Jquery
-. google maps Javascript API
-. Jspdf
-. Jspdf-AutoTable
+- Webpack
+- Babel
+- Jquery
+- google maps Javascript API
+- Jspdf
+- Jspdf-AutoTable
 
 # Tutorial Used/Credit 
 1. Bryce -  FROM Develop Mindfully
