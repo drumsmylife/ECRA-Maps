@@ -14,17 +14,27 @@ INFO
 
 3. Run npm run dev to run the project using webpack-dev-server.
 
-4. Click get started and choose your CSV File or JSON file
+4. Click get started and choose your CSV File or JSON file. 
 
-5. DO NOT USE A BIG CSV FILE WITH A TON OF ROWS/COLUMNS. IT WILL TAKE TOO LONG TO LOAD. CHOOSE A SMALLER CSV FILE WITH A SHORT AMOUNT OF INFO. THIS IS BECAUSE OF THE GOOGLE API USAGE LIMIT. If it is loading very slow then the file is too big. 
+5. click import button
+
+6. DO NOT USE A BIG CSV FILE WITH A TON OF ROWS/COLUMNS. IT WILL TAKE TOO LONG TO LOAD. CHOOSE A SMALLER CSV FILE WITH A SHORT AMOUNT OF INFO. THIS IS BECAUSE OF THE GOOGLE API USAGE LIMIT. If it is loading very slow then the file is too big. 
  
-6. Match all required fields with each other
+7. Match all required fields with each other
  - address to address
  - city to city
  - state to state
  - zip to zip
  
-7. You can check the optional fields if you want but do not have to
+8. You can check the optional fields if you want but do not have to
+
+9. Hit Plot button and it will load the map with your csv file locations with markers. 
+
+10. hover over markers for info
+
+11. click on a marker and another to make a route. 
+
+12. click on export pdf button to save routes/directions for later. They will be clickable links as well in the pdf.
  
 
 # Dev Tools and Libraries used
