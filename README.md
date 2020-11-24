@@ -18,7 +18,7 @@ INFO
 
 5. click import button
 
-6. DO NOT USE A BIG CSV FILE WITH A TON OF ROWS/COLUMNS. IT WILL TAKE TOO LONG TO LOAD. CHOOSE A SMALLER CSV FILE WITH A SHORT AMOUNT OF INFO. THIS IS BECAUSE OF THE GOOGLE API USAGE LIMIT. If it is loading very slow then the file is too big. 
+6. COULD NOT USE CSV FILE WITH A TON OF ROWS/COLUMNS. IT TOOK TOO LONG TO LOAD. CHOSE A SMALLER CSV FILE WITH A SHORT AMOUNT OF INFO. THIS IS BECAUSE OF THE GOOGLE API USAGE LIMIT. If it is loading very slow then the file is too big. 
  
 7. Match all required fields with each other
  - address to address
